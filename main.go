@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"htmlLink/link"
+
+	"github.com/mvenkatesh431/LinkParser/link"
 )
 
 func main() {
 
 	// The HTML file to Parse
-	const fileName = "example2.html"
+	const fileName = "example4.html"
 
 	// GetLinks will take HTML 'fileName' and returns all the links in HTML page in the Link data structure format.
 	links, err := link.GetLinks(fileName)
