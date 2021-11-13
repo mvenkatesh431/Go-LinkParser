@@ -1,4 +1,4 @@
-module htmlLink
+module github.com/mvenkatesh431/LinkParser
 
 go 1.17
 

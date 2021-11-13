@@ -1,16 +1,17 @@
 package main
 
 import (
-	"htmlLink/link"
 	"io"
 	"log"
 	"os"
+
+	"github.com/mvenkatesh431/LinkParser/link"
 )
 
 func main() {
 
 	// The HTML file to Parse
-	const fileName = "example2.html"
+	const fileName = "example4.html"
 
 	// ReadHTML will take fileName and returns the io.Reader
 	reader, err := readHTML(fileName)
