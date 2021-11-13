@@ -2,7 +2,6 @@ package link
 
 import (
 	"io"
-	"os"
 	"strings"
 
 	"golang.org/x/net/html"
@@ -13,25 +12,9 @@ type Link struct {
 	Text string
 }
 
-// ReadHTML will take fileName and returns the io.Reader
-func readHTML(fileName string) (io.Reader, error) {
-	// os.Open returns the io.Reader
-	file, err := os.Open(fileName)
-	if err != nil {
-		return nil, err
-	}
-	return file, nil
-}
-
 // GetLinks will take io.Reader and returns all the links in HTML page in the Link data structure format.
-func GetLinks(fileName string) ([]Link, error) {
+func GetLinks(reader io.Reader) ([]Link, error) {
 	var links []Link
-
-	// ReadHTML will take fileName and returns the io.Reader
-	reader, err := readHTML(fileName)
-	if err != nil {
-		return nil, err
-	}
 
 	// html.Parse will return the *html.node type doc
 	doc, err := html.Parse(reader)
